@@ -34,3 +34,9 @@ Route::group(['middleware' => ['web']], function () {
         return view('admin/dashboard');
     });
 });
+
+// crud blog post
+Route::group(['middleware' => ['web']], function () {
+    Route::get('admin/create-post', 'admin\BlogController@getCreate');
+    Route::post('admin/create-post', 'admin\BlogController@postCreate');
+});
