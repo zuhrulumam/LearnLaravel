@@ -39,4 +39,13 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => ['web']], function () {
     Route::get('admin/create-post', 'admin\BlogController@getCreate');
     Route::post('admin/create-post', 'admin\BlogController@postCreate');
+    
+    Route::get('admin/posts', 'admin\BlogController@index');
+    
+    Route::get('admin/{slug?}/edit', 'admin\BlogController@getEditPost');
+    Route::post('admin/{slug?}/edit', 'admin\BlogController@postEditPost');
+    
+    Route::post('admin/{slug?}/delete', 'admin\BlogController@postDelete');
+    
+    Route::get('admin/{slug?}/read', 'admin\BlogController@getReadPost');
 });

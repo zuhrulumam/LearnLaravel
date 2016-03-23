@@ -19,3 +19,7 @@ Day 3 :
 (for time being i will focus on my strength --> backend :v)
 (not yet with CRUD, a lot of things to learn :v)
 - create view for creating blog post (not yet finished) 
+
+Day 4 :
+- Create Read Update Delete Post (take 1 hour to finish this, well in yii2 it just take 3 minutes less :v)
+(i think tomorrow will work the UI, i hope so .. )

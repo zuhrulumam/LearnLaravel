@@ -10,16 +10,25 @@
     </head>
 
     <body id="@yield('bodyid', 'main')">   
-       
+
 
         @yield('content')
-        
-         
-         <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
-        
+
+
+<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+
         <script src="{!! asset('js/jquery.min.js') !!}"></script>
         <script src="{!! asset('js/semantic.min.js') !!}"></script>
-
+        <script type="text/javascript">
+                    $('.message .close')
+                    .on('click', function () {
+                    $(this)
+                            .closest('.message')
+                            .transition('fade')
+                            ;
+                    })
+                    ;
+        </script>
 
         @yield('js')
     </body>
