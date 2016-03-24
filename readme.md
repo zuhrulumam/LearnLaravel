@@ -23,3 +23,6 @@ Day 3 :
 Day 4 :
 - Create Read Update Delete Post (take 1 hour to finish this, well in yii2 it just take 3 minutes less :v)
 (i think tomorrow will work the UI, i hope so .. )
+
+Day 5 : 
+Okayyyy.. today i realize that semantic-ui require more time to learn than bootstrap. Because i want finish my main object here quickly (learning laravel), so tomorrow i will change this project UI into bootstrap. :v

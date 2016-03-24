@@ -11,8 +11,10 @@
 
     <body id="@yield('bodyid', 'main')">   
 
+        @include('admin.layouts.navbar')
 
         @yield('content')
+
 
 
 <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->

@@ -15,29 +15,27 @@
         <div class="ui form segment">
             <div class="field">
                 <label>Title</label>
-                <div class="ui input">                
+                <div class="ui corner labeled input">
                     <input type="text" placeholder="Judul Post" name="title" value="{{ $post->blog_title }}">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
                 </div>
             </div>
             <div class="field">
                 <label>Post Content</label>
-                <textarea name="content">{{ $post->blog_content }}</textarea>
+                 <div class="ui corner labeled input">
+                     <textarea name="content" placeholder="Post Content">{{ $post->blog_content }}</textarea>
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+                
             </div>
+           
             <button class="fluid  ui blue button" type="submit">Update</button>
         </div>
     </form>
 </div>
 @endsection
 
-@section('js')
-<script type="text/javascript">
-    $('.message .close')
-            .on('click', function () {
-                $(this)
-                        .closest('.message')
-                        .transition('fade')
-                        ;
-            })
-            ;
-</script>
-@endsection

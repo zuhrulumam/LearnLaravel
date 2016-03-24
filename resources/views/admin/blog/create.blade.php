@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="example">
-    
+
     @if(session('message'))
     <div class="ui positive message">
         <i class="close icon"></i>
@@ -21,13 +21,22 @@
         <div class="ui form segment">
             <div class="field">
                 <label>Title</label>
-                <div class="ui input">                
+                <div class="ui corner labeled input">
                     <input type="text" placeholder="Judul Post" name="title">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
                 </div>
             </div>
             <div class="field">
                 <label>Post Content</label>
-                <textarea name="content"></textarea>
+                 <div class="ui corner labeled input">
+                     <textarea name="content" placeholder="Post Content"></textarea>
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+                
             </div>
             <button class="fluid  ui green button" type="submit">Save</button>
         </div>
