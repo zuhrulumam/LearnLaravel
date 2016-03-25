@@ -1,12 +1,12 @@
-# Learn Laravel 5.2 Project and Semantic-UI
+# Learn Laravel 5.2 Project 
 
-This project created based on my experience of learning Laravel 5.2 and Semanric-UI (study case Blog).
+This project created based on my experience of learning Laravel 5.2 (study case Blog).
 
 One Day One Function .. :v
 
 Day 1 : 
 - Install Laravel 5.2
-- integrate Laravel with Semantic-UI (http://semantic-ui.com/)
+- integrate Laravel with Semantic-UI (http://semantic-ui.com/) (deleted in day 6)
 - Making Semantic-UI cheatsheet page
 
 Day 2 :
@@ -26,3 +26,6 @@ Day 4 :
 
 Day 5 : 
 Okayyyy.. today i realize that semantic-ui require more time to learn than bootstrap. Because i want finish my main object here quickly (learning laravel), so tomorrow i will change this project UI into bootstrap. :v
+
+Day 6 : 
+- Templating admin view with bootstrap theme (https://w3layouts.com/easy-admin-panel-flat-bootstrap-responsive-web-template/)

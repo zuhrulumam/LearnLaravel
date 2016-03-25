@@ -3,34 +3,43 @@
     <head>
         <title>@yield('title')</title>
 
-        <link href="{!! asset('css/semantic.min.css')!!}" type="text/css" rel="stylesheet">
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="{!! asset('css/bootstrap.min.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/style.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/font-awesome.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/icon-font.min.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/animate.css') !!}" rel='stylesheet' type='text/css' />
+
+        <script src="{!! asset('js/jquery-1.10.2.min.js') !!}"></script>
+        <script src="{!! asset('js/Chart.js') !!}"></script>
+        <script src="{!! asset('js/wow.min.js') !!}"></script>
+        <script>
+                    new WOW().init();</script>
 
         @yield('css')
 
     </head>
 
-    <body id="@yield('bodyid', 'main')">   
+    <body id="@yield('bodyid', 'main')" class="sticky-header left-side-collapsed"  onload="initMap()">   
+        <section>
+            @include('admin.layouts.navbar')
+            <!-- main content start-->
+            <div class="main-content">
 
-        @include('admin.layouts.navbar')
+                @include('admin.layouts.notification')
+                <div id="page-wrapper">
+                    @yield('content')
+                </div>
+            </div>
 
-        @yield('content')
+            @include('admin.layouts.footer')
 
+        </section>
 
+        <script src="{!! asset('js/jquery.nicescroll.js') !!}"></script>
+        <script src="{!! asset('js/scripts.js') !!}"></script>
+        <script src="{!! asset('js/bootstrap.min.js') !!}"></script>
 
-<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
-
-        <script src="{!! asset('js/jquery.min.js') !!}"></script>
-        <script src="{!! asset('js/semantic.min.js') !!}"></script>
-        <script type="text/javascript">
-                    $('.message .close')
-                    .on('click', function () {
-                    $(this)
-                            .closest('.message')
-                            .transition('fade')
-                            ;
-                    })
-                    ;
-        </script>
 
         @yield('js')
     </body>

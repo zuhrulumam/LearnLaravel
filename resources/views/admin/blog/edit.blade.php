@@ -2,40 +2,45 @@
 @section('title', 'Edit Post')
 
 @section('content')
-<div class="example">
-   
-    <form class="form-horizontal" method="post">
+
+<div class="graphs">
+    <h3 class="blank1">Edit Blog Post ID : {{ $post->slug }}</h3>  
+
+
+    @if(session('message'))
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success !</strong> {{session('message')}}  
+    </div>
+
+    @endif
+
+    <form method="post">
         @foreach ($errors->all() as $error)
-        <div class="ui negative message">
-            <i class="close icon"></i>
-            {{$error}}        
-        </div>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Warning !</strong> {{$error}} 
+        </div>        
         @endforeach
         {!! csrf_field() !!}
-        <div class="ui form segment">
-            <div class="field">
-                <label>Title</label>
-                <div class="ui corner labeled input">
-                    <input type="text" placeholder="Judul Post" name="title" value="{{ $post->blog_title }}">
-                    <div class="ui corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="field">
-                <label>Post Content</label>
-                 <div class="ui corner labeled input">
-                     <textarea name="content" placeholder="Post Content">{{ $post->blog_content }}</textarea>
-                    <div class="ui corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-                </div>
-                
-            </div>
-           
-            <button class="fluid  ui blue button" type="submit">Update</button>
+        <div class="form-group" >
+
+            <label for="focusedinput" class="control-label">Post Title</label>
+
+            <input class="form-control1" type="text" placeholder="Judul Post" name="title" value="{{ $post->blog_title }}">
         </div>
+        <div class="form-group" >
+            <label for="focusedinput" class="control-label">Post Content</label>
+
+            <textarea cols="200" rows="5" class="form-control1" placeholder="Post Content" name="content">{{ $post->blog_content }}</textarea>
+
+
+        </div>
+        <button class="btn-success btn btn-block" type="submit">Submit</button>
+
     </form>
 </div>
+
 @endsection
 
