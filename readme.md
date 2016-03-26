@@ -29,3 +29,7 @@ Okayyyy.. today i realize that semantic-ui require more time to learn than boots
 
 Day 6 : 
 - Templating admin view with bootstrap theme (https://w3layouts.com/easy-admin-panel-flat-bootstrap-responsive-web-template/)
+--> i just remembered that admin LTE is good for admin template :(
+
+Day 7 :
+- Templating homepage with bootstrap theme (https://w3layouts.com/easy-admin-panel-flat-bootstrap-responsive-web-template/)

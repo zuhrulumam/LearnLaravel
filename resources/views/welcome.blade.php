@@ -2,121 +2,282 @@
 
 @section('title', 'Home')
 
-
-
-
 @section('content')
-<!-- Page Contents -->
-<div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment">
+@include('banner')
 
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu">
-                <a class="toc item">
-                    <i class="sidebar icon"></i>
+<!-- blog -->
+<div class="blog">
+    <div class="blog-left">
+        <div class="blog-left-grid">
+            <div class="blog-left-grid-left">
+                <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
+                <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
+            </div>
+            <div class="blog-left-grid-right">
+                <a href="#" class="hvr-bounce-to-bottom non">20 Comments</a>
+            </div>
+            <div class="clearfix"> </div>
+            <a href="single.html"><img src="{!! asset('images/user/4.jpg') !!}" alt=" " class="img-responsive" /></a>
+            <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
+                ut aut reiciendis voluptatibus maiores alias consequatur aut 
+                perferendis doloribus asperiores repellat.Et harum quidem rerum 
+                facilis est et expedita distinctio. Nam libero tempore, cum 
+                soluta nobis est eligendi optio cumque nihil impedit quo minus 
+                id quod maxime placeat facere possimus, omnis voluptas assumenda 
+                est, omnis dolor repellendus. Temporibus autem quibusdam et 
+                aut officiis debitis.</p>
+            <div class="rd-mre">
+                <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+            </div>
+        </div>
+        <div class="blog-left-grid">
+            <div class="blog-left-grid-left">
+                <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
+                <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
+            </div>
+            <div class="blog-left-grid-right">
+                <a href="#" class="hvr-bounce-to-bottom non">40 Comments</a>
+            </div>
+            <div class="clearfix"> </div>
+            <a href="single.html"><img src="{!! asset('images/user/5.jpg') !!}" alt=" " class="img-responsive" /></a>
+            <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
+                ut aut reiciendis voluptatibus maiores alias consequatur aut 
+                perferendis doloribus asperiores repellat.Et harum quidem rerum 
+                facilis est et expedita distinctio. Nam libero tempore, cum 
+                soluta nobis est eligendi optio cumque nihil impedit quo minus 
+                id quod maxime placeat facere possimus, omnis voluptas assumenda 
+                est, omnis dolor repellendus. Temporibus autem quibusdam et 
+                aut officiis debitis.</p>
+            <div class="rd-mre">
+                <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="blog-right">
+        <div class="sap_tabs">	
+            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                <ul class="resp-tabs-list">
+                    <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span>Popular</span></li>
+                    <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>Recent</span></li>
+                    <li class="resp-tab-item grid3" aria-controls="tab_item-2" role="tab"><span>Comments</span></li>
+                    <div class="clear"></div>
+                </ul>				  	 
+                <div class="resp-tabs-container">
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/7-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/7.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015 <span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/8-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/8.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/9-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/9.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/10-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/10.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/8-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/8.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/9-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/9.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/10-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/10.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/7-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/7.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/9-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/9.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/10-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/10.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/7-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/7.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="facts">
+                            <div class="tab_list">
+                                <a href="{!! asset('images/user/8-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                                    <img src="{!! asset('images/user/8.jpg') !!}" alt=" " class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="tab_list1">
+                                <a href="#">excepturi sint occaecati</a>
+                                <p>June 30,2015<span>Nam libero tempore, cum soluta nobis.</span></p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#horizontalTab').easyResponsiveTabs({
+                            type: 'default', //Types: default, vertical, accordion           
+                            width: 'auto', //auto or any width like 600px
+                            fit: true   // 100% fit in a container
+                        });
+                    });
+                </script>
+                <link rel="stylesheet" href="css/swipebox.css">
+                <script src="js/jquery.swipebox.min.js"></script> 
+                <script type="text/javascript">
+                    jQuery(function ($) {
+                        $(".swipebox").swipebox();
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Subscribe To Our Newsletter</h3>
+            <form>
+                <input type="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                                    this.value = 'Email Address';
+                                                                }" required="">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+        <div class="four-fig">
+            <div class="four-fig1">
+                <a href="{!! asset('images/user/11-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                    <img src="{!! asset('images/user/11.jpg') !!}" class="img-responsive" alt=" " />
                 </a>
-                <a class="active item">Home</a>
-                <a class="item">Work</a>
-                <a class="item">Company</a>
-                <a class="item">Careers</a>
-                <div class="right item">
-                    <a class="ui inverted button">Log in</a>
-                    <a class="ui inverted button">Sign Up</a>
-                </div>
             </div>
+            <div class="four-fig1">
+                <a href="{!! asset('images/user/14-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                    <img src="{!! asset('images/user/14.jpg') !!}" class="img-responsive" alt=" " />
+                </a>
+            </div>
+            <div class="four-fig1">
+                <a href="{!! asset('images/user/10-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                    <img src="{!! asset('images/user/21.jpg') !!}" class="img-responsive" alt=" " />
+                </a>
+            </div>
+            <div class="four-fig1">
+                <a href="{!! asset('images/user/8-.jpg') !!}" class="b-link-stripe b-animate-go   swipebox"  title="">
+                    <img src="{!! asset('images/user/22.jpg') !!}" class="img-responsive" alt=" " />
+                </a>
+            </div>
+            <div class="clearfix"> </div>
         </div>
-        
-        <div class="ui text container">
-            <h1 class="ui inverted header">
-                Imagine-a-Company
-            </h1>
-            <h2>Do whatever you want when you want to.</h2>
-            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
-        </div>
-
-    </div>
-
-    <div class="ui vertical stripe segment">
-        <div class="ui middle aligned stackable grid container">
-            <div class="row">
-                <div class="eight wide column">
-                    <h3 class="ui header">We Help Companies and Companions</h3>
-                    <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-                    <h3 class="ui header">We Make Bananas That Can Dance</h3>
-                    <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
-                </div>
-                <div class="six wide right floated column">
-                    <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
-                </div>
-            </div>
-            <div class="row">
-                <div class="center aligned column">
-                    <a class="ui huge button">Check Them Out</a>
-                </div>
-            </div>
+        <div class="pgs">
+            <h3>Pages</h3>
+            <ul>
+                <li><a href="#">doloribus asperiores repellat</a></li>
+                <li><a href="#">Itaque earum rerum hic tenetur</a></li>
+                <li><a href="#">deserunt mollitia laborum et dolorum</a></li>
+                <li><a href="#">facilis est et expedita distinctio</a></li>
+                <li><a href="#">occaecati cupiditate non provident</a></li>
+                <li><a href="#">deserunt mollitia laborum et dolorum</a></li>
+            </ul>
         </div>
     </div>
-
-
-    <div class="ui vertical stripe quote segment">
-        <div class="ui equal width stackable internally celled grid">
-            <div class="center aligned row">
-                <div class="column">
-                    <h3>"What a Company"</h3>
-                    <p>That is what they all say about us</p>
-                </div>
-                <div class="column">
-                    <h3>"I shouldn't have gone with their competitor."</h3>
-                    <p>
-                        <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui vertical stripe segment">
-        <div class="ui text container">
-            <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-            <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-            <a class="ui large button">Read More</a>
-            <h4 class="ui horizontal header divider">
-                <a href="#">Case Studies</a>
-            </h4>
-            <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-            <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-            <a class="ui large button">I'm Still Quite Interested</a>
-        </div>
-    </div>
-
-
-    <div class="ui inverted vertical footer segment">
-        <div class="ui container">
-            <div class="ui stackable inverted divided equal height stackable grid">
-                <div class="three wide column">
-                    <h4 class="ui inverted header">About</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Sitemap</a>
-                        <a href="#" class="item">Contact Us</a>
-                        <a href="#" class="item">Religious Ceremonies</a>
-                        <a href="#" class="item">Gazebo Plans</a>
-                    </div>
-                </div>
-                <div class="three wide column">
-                    <h4 class="ui inverted header">Services</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">Banana Pre-Order</a>
-                        <a href="#" class="item">DNA FAQ</a>
-                        <a href="#" class="item">How To Access</a>
-                        <a href="#" class="item">Favorite X-Men</a>
-                    </div>
-                </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">Footer Header</h4>
-                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="clearfix"> </div>
 </div>
+<!-- //blog -->
 @endsection
