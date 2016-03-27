@@ -26,15 +26,15 @@
         {!! csrf_field() !!}
         <div class="form-group" >
             <label for="focusedinput" class="control-label">Title</label>
-            
-                <input type="text" class="form-control1" id="focusedinput" placeholder="Post Ttitle" name="title">
-            
+
+            <input type="text" class="form-control1" id="focusedinput" placeholder="Post Ttitle" name="title" value="{{ old('title') }}">
+
 
         </div>
         <div class="form-group" >
             <label for="focusedinput" class="control-label">Post Content</label>
-            
-            <textarea cols="200" rows="5" class="form-control1" placeholder="Post Content" name="content"></textarea>
+
+            <textarea cols="200" rows="5" class="form-control1" placeholder="Post Content" name="content">{{ old('content') }}</textarea>
 
 
         </div>

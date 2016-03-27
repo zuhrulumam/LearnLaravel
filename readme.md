@@ -32,4 +32,10 @@ Day 6 :
 --> i just remembered that admin LTE is good for admin template :(
 
 Day 7 :
-- Templating homepage with bootstrap theme (https://w3layouts.com/easy-admin-panel-flat-bootstrap-responsive-web-template/)
+- Templating homepage with bootstrap theme (https://w3layouts.com/quickly-a-blogging-category-flat-bootstrap-responsive-web-template/)
+
+Day 8 :
+- add warning modal when delete a post
+- showing posts in user
+- add pagination
+- add old input in create

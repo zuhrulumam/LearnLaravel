@@ -8,9 +8,10 @@
 <!-- blog -->
 <div class="blog">
     <div class="blog-left">
+        @foreach ($posts as $post)
         <div class="blog-left-grid">
             <div class="blog-left-grid-left">
-                <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
+                <h3><a href="single.html">{{ $post->blog_title }}</a></h3>
                 <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
             </div>
             <div class="blog-left-grid-right">
@@ -18,40 +19,14 @@
             </div>
             <div class="clearfix"> </div>
             <a href="single.html"><img src="{!! asset('images/user/4.jpg') !!}" alt=" " class="img-responsive" /></a>
-            <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
-                ut aut reiciendis voluptatibus maiores alias consequatur aut 
-                perferendis doloribus asperiores repellat.Et harum quidem rerum 
-                facilis est et expedita distinctio. Nam libero tempore, cum 
-                soluta nobis est eligendi optio cumque nihil impedit quo minus 
-                id quod maxime placeat facere possimus, omnis voluptas assumenda 
-                est, omnis dolor repellendus. Temporibus autem quibusdam et 
-                aut officiis debitis.</p>
+            <p class="para"> {{ $post->blog_content }}</p>
             <div class="rd-mre">
                 <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
             </div>
         </div>
-        <div class="blog-left-grid">
-            <div class="blog-left-grid-left">
-                <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
-                <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
-            </div>
-            <div class="blog-left-grid-right">
-                <a href="#" class="hvr-bounce-to-bottom non">40 Comments</a>
-            </div>
-            <div class="clearfix"> </div>
-            <a href="single.html"><img src="{!! asset('images/user/5.jpg') !!}" alt=" " class="img-responsive" /></a>
-            <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus, 
-                ut aut reiciendis voluptatibus maiores alias consequatur aut 
-                perferendis doloribus asperiores repellat.Et harum quidem rerum 
-                facilis est et expedita distinctio. Nam libero tempore, cum 
-                soluta nobis est eligendi optio cumque nihil impedit quo minus 
-                id quod maxime placeat facere possimus, omnis voluptas assumenda 
-                est, omnis dolor repellendus. Temporibus autem quibusdam et 
-                aut officiis debitis.</p>
-            <div class="rd-mre">
-                <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
-            </div>
-        </div>
+        @endforeach
+        
+        {!! $posts->links() !!}
     </div>
     <div class="blog-right">
         <div class="sap_tabs">	
@@ -214,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+                <script src="{!! asset('js/user/easyResponsiveTabs.js') !!}" type="text/javascript"></script>
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $('#horizontalTab').easyResponsiveTabs({
@@ -225,7 +200,7 @@
                     });
                 </script>
                 <link rel="stylesheet" href="css/swipebox.css">
-                <script src="js/jquery.swipebox.min.js"></script> 
+                <script src="{!! asset('js/user/jquery.swipebox.min.js') !!}"></script> 
                 <script type="text/javascript">
                     jQuery(function ($) {
                         $(".swipebox").swipebox();
