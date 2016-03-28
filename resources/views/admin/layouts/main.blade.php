@@ -15,12 +15,16 @@
         <script src="{!! asset('js/wow.min.js') !!}"></script>
         <script>
                     new WOW().init();</script>
+        
+        <script src="{!! asset('js/jquery.validate.min.js') !!}"></script>
+        
+        <script src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
 
         @yield('css')
 
     </head>
 
-    <body id="@yield('bodyid', 'main')" class="sticky-header left-side-collapsed"  onload="initMap()">   
+    <body class="sticky-header left-side-collapsed"  onload="initMap()">   
         <section>
             @include('admin.layouts.navbar')
             <!-- main content start-->

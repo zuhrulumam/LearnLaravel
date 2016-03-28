@@ -39,3 +39,7 @@ Day 8 :
 - showing posts in user
 - add pagination
 - add old input in create
+
+Day 9: 
+- Add ckeditor (not yet tested) (http://ckeditor.com/)
+- add jqueryvalidation (http://jqueryvalidation.org/) in create post
