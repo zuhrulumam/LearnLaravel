@@ -43,3 +43,8 @@ Day 8 :
 Day 9: 
 - Add ckeditor (not yet tested) (http://ckeditor.com/)
 - add jqueryvalidation (http://jqueryvalidation.org/) in create post
+
+Day 10 :
+- pjax for list in admin (not yet done)
+- add created by
+- comment table
