@@ -19,6 +19,8 @@
         <script src="{!! asset('js/jquery.validate.min.js') !!}"></script>
         
         <script src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
+        
+        <script src="{!! asset('js/jquery.pjax.js') !!}"></script>
 
         @yield('css')
 

@@ -48,3 +48,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('admin/{slug?}/read', 'admin\BlogController@getReadPost');
 });
+
+// comments
+Route::group(['middleware'=>['web']], function(){
+    Route::get("/admin/comments", "admin\CommentController@index");
+});

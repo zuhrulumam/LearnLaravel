@@ -12,7 +12,7 @@
         <div class="blog-left-grid">
             <div class="blog-left-grid-left">
                 <h3><a href="single.html">{{ $post->blog_title }}</a></h3>
-                <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
+                <p>by <span>{{ $post->blog_created_by }}</span> | {{ date('d-F-Y', strtotime($post->created_at)) }} | <span>Sint</span></p>
             </div>
             <div class="blog-left-grid-right">
                 <a href="#" class="hvr-bounce-to-bottom non">20 Comments</a>
