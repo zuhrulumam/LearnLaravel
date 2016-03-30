@@ -53,3 +53,10 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware'=>['web']], function(){
     Route::get("/admin/comments", "admin\CommentController@index");
 });
+
+//user route
+Route::group(['middleware'=>['web']], function (){
+    Route::get("read/{slug?}", 'user\HomeController@readPost');
+    
+    Route::post("read/{slug?}", "user\HomeController@postComment");
+});

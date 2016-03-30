@@ -48,3 +48,7 @@ Day 10 :
 - pjax for list in admin (not yet done)
 - add created by
 - comment table
+
+Day 11 : 
+- add read post user
+- add send comment

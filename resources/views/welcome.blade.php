@@ -11,21 +11,21 @@
         @foreach ($posts as $post)
         <div class="blog-left-grid">
             <div class="blog-left-grid-left">
-                <h3><a href="single.html">{{ $post->blog_title }}</a></h3>
+                <h3><a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></h3>
                 <p>by <span>{{ $post->blog_created_by }}</span> | {{ date('d-F-Y', strtotime($post->created_at)) }} | <span>Sint</span></p>
             </div>
             <div class="blog-left-grid-right">
-                <a href="#" class="hvr-bounce-to-bottom non">20 Comments</a>
+                <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}" class="hvr-bounce-to-bottom non">20 Comments</a>
             </div>
             <div class="clearfix"> </div>
-            <a href="single.html"><img src="{!! asset('images/user/4.jpg') !!}" alt=" " class="img-responsive" /></a>
+            <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}"><img src="{!! asset('images/user/4.jpg') !!}" alt=" " class="img-responsive" /></a>
             <p class="para"> {{ $post->blog_content }}</p>
             <div class="rd-mre">
-                <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+                <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}" class="hvr-bounce-to-bottom quod">Read More</a>
             </div>
         </div>
         @endforeach
-        
+
         {!! $posts->links() !!}
     </div>
     <div class="blog-right">
@@ -191,29 +191,27 @@
                 </div>
                 <script src="{!! asset('js/user/easyResponsiveTabs.js') !!}" type="text/javascript"></script>
                 <script type="text/javascript">
-                    $(document).ready(function () {
-                        $('#horizontalTab').easyResponsiveTabs({
-                            type: 'default', //Types: default, vertical, accordion           
-                            width: 'auto', //auto or any width like 600px
-                            fit: true   // 100% fit in a container
-                        });
-                    });
-                </script>
+        $(document).ready(function () {
+$('#horizontalTab').easyResponsiveTabs({
+type: 'default', //Types: default, vertical, accordion           
+        width: 'auto', //auto or any width like 600px
+        fit: true   // 100% fit in a container
+});
+});</script>
                 <link rel="stylesheet" href="css/swipebox.css">
                 <script src="{!! asset('js/user/jquery.swipebox.min.js') !!}"></script> 
                 <script type="text/javascript">
-                    jQuery(function ($) {
-                        $(".swipebox").swipebox();
-                    });
-                </script>
+        jQuery(function ($) {
+        $(".swipebox").swipebox();
+        });</script>
             </div>
         </div>
         <div class="newsletter">
             <h3>Subscribe To Our Newsletter</h3>
             <form>
                 <input type="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                                                    this.value = 'Email Address';
-                                                                }" required="">
+                            this.value = 'Email Address';
+                            }" required="">
                 <input type="submit" value="Send">
             </form>
         </div>
