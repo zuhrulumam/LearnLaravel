@@ -11,5 +11,9 @@ class Blog extends Model {
     
     protected $table = 'blog';
     protected $primaryKey = 'blog_id';
+    
+    public function comments() {
+        return $this->hasMany('App\Comments', 'comment_blog_id', 'blog_id');
+    }
 
 }

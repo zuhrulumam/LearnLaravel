@@ -52,3 +52,6 @@ Day 10 :
 Day 11 : 
 - add read post user
 - add send comment
+
+Day 12 : 
+- relation database eloquent (blog with comment) 

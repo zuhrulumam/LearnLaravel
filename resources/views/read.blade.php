@@ -20,34 +20,22 @@
     </div>
     <div class="comment-grid-top">
         <h3>Responses</h3>
+        @foreach($post->comments as $comment)
         <div class="comments-top-top">
             <div class="top-comment-left">
                 <a href="#"><img class="img-responsive" src="{!! asset('images/user/co.png') !!}" alt=""></a>
             </div>
             <div class="top-comment-right">
                 <ul>
-                    <li><span class="left-at"><a href="#">Admin</a></span></li>
-                    <li><span class="right-at">June 30, 2015 at 10.30am</span></li>
+                    <li><span class="left-at"><a href="#">{{ $comment->comment_created_by }}</a></span></li>
+                    <li><span class="right-at">{{ date('m F, Y', strtotime($comment->created_at)) }}</span></li>
                     <li><a class="reply" href="#">REPLY</a></li>
                 </ul>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+                <p>{{ $comment->comment_content }} </p>
             </div>
             <div class="clearfix"> </div>
         </div>
-        <div class="comments-top-top top-grid-comment">
-            <div class="top-comment-left">
-                <a href="#"><img class="img-responsive" src="{!! asset('images/user/co.png') !!}" alt=""></a>
-            </div>
-            <div class="top-comment-right">
-                <ul>
-                    <li><span class="left-at"><a href="#">Admin</a></li>
-                    <li><span class="right-at">June 30, 2015 at 10.30am</span></li>
-                    <li><a class="reply" href="#">REPLY</a></li>
-                </ul>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+        @endforeach
     </div>			
     <div class="artical-commentbox">
         <h3>leave a comment</h3>

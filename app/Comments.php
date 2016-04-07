@@ -10,4 +10,8 @@ class Comments extends Model
             
     
     protected $primaryKey = 'comment_id';
+    
+    public function blog() {
+        return $this->belongsTo('App\Blog', 'comment_blog_id');
+    }
 }

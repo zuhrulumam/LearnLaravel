@@ -10,12 +10,13 @@
     <div class="blog-left">
         @foreach ($posts as $post)
         <div class="blog-left-grid">
+            
             <div class="blog-left-grid-left">
                 <h3><a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></h3>
                 <p>by <span>{{ $post->blog_created_by }}</span> | {{ date('d-F-Y', strtotime($post->created_at)) }} | <span>Sint</span></p>
             </div>
             <div class="blog-left-grid-right">
-                <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}" class="hvr-bounce-to-bottom non">20 Comments</a>
+                <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}" class="hvr-bounce-to-bottom non">{{ count($post->comments) }} Comments</a>
             </div>
             <div class="clearfix"> </div>
             <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}"><img src="{!! asset('images/user/4.jpg') !!}" alt=" " class="img-responsive" /></a>
