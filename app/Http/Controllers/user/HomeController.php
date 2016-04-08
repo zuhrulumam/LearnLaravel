@@ -12,8 +12,8 @@ use App\Http\Requests\CommentFormRequest;
 class HomeController extends Controller {
 
     public function index() {
-        $posts = Blog::paginate(1);               
-
+        $posts = Blog::paginate(1);         
+        
         return view('welcome', ['posts'=> $posts]);
     }
 

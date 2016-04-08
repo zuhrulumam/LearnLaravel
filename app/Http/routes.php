@@ -31,7 +31,7 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 
-    Route::get('/','user\HomeController@index');
+    Route::get('/', 'user\HomeController@index');
 });
 
 // crud blog post
@@ -50,13 +50,17 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 // comments
-Route::group(['middleware'=>['web']], function(){
+Route::group(['middleware' => ['web']], function() {
     Route::get("/admin/comments", "admin\CommentController@index");
 });
 
 //user route
-Route::group(['middleware'=>['web']], function (){
+Route::group(['middleware' => ['web']], function () {
     Route::get("read/{slug?}", 'user\HomeController@readPost');
-    
+
     Route::post("read/{slug?}", "user\HomeController@postComment");
+
+    Route::get('/twitter', function() {
+        return Share::load('http://www.example.com', 'My example')->facebook();
+    });
 });

@@ -9,6 +9,8 @@
         <script src="{!! asset('js/jquery-1.10.2.min.js') !!}" type="text/javascript"></script>
         <script src="{!! asset('js/user/move-top.js') !!}" type="text/javascript"></script>
         <script src="{!! asset('js/user/easing.js') !!}" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
         <script type="text/javascript">
                     jQuery(document).ready(function($) {
