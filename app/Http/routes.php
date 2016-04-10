@@ -52,6 +52,8 @@ Route::group(['middleware' => ['web']], function () {
 // comments
 Route::group(['middleware' => ['web']], function() {
     Route::get("/admin/comments", "admin\CommentController@index");
+    
+    Route::get("/admin/changeStatus/{slug?}/{status?}", "admin\CommentController@changeStatus");
 });
 
 //user route

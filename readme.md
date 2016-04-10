@@ -58,3 +58,7 @@ Day 12 :
 
 Day 13: 
 - share button (fb, tweet, google+)
+
+Day 14: 
+- add comments confirmation in admin
+- show comment that have confirmed by admin

@@ -20,8 +20,8 @@ class HomeController extends Controller {
     public function readPost($slug) {
         $post = Blog::whereSlug($slug)->first();
 
-        $comments = $post->comments;
-
+        $comments = $post->comments->where('status', 1);
+       
         return view('read',['post'=>$post, 'comments'=>$comments]);
     }
 

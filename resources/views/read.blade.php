@@ -47,10 +47,12 @@
             </li>
         </ul>
     </div>
-
     <div class="comment-grid-top">
         <h3>Responses</h3>
-        @foreach($post->comments as $comment)
+        @if($comments->isEmpty())
+        <h4>No Response Yet</h4>
+        @else
+        @foreach($comments as $comment)
         <div class="comments-top-top">
             <div class="top-comment-left">
                 <a href="#"><img class="img-responsive" src="{!! asset('images/user/co.png') !!}" alt=""></a>
@@ -61,11 +63,12 @@
                     <li><span class="right-at">{{ date('m F, Y', strtotime($comment->created_at)) }}</span></li>
                     <li><a class="reply" href="#">REPLY</a></li>
                 </ul>
-                <p>{{ $comment->comment_content }} </p>
+                <p>{{ $comment->comment_content }} </p>                
             </div>
             <div class="clearfix"> </div>
         </div>
         @endforeach
+        @endif
     </div>			
     <div class="artical-commentbox">
         <h3>leave a comment</h3>
