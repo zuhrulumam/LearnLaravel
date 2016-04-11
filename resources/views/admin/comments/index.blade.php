@@ -60,6 +60,8 @@
     </table>
     @endif
 
+    <a href="{!! action('admin\CommentController@getCreate') !!}" class="btn btn-block btn-primary">Add Comment</a>
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

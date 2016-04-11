@@ -33,4 +33,28 @@ class CommentController extends Controller
         $post->save();
         return \Redirect::back()->with("message", "Success change status slug ".$slug." to ".$textStatus);
     }
+    
+    public function getCreate($param) {
+        
+    }
+    
+     public function postCreate($param) {
+        
+    }
+    
+     public function getEdit($slug) {
+        
+    }
+    
+     public function postEdit($slug) {
+        
+    }
+    
+    public function postDelete($slug) {
+        
+    }
+    
+    public function getRead($slug) {
+        
+    }
 }

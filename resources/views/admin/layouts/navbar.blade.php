@@ -36,7 +36,14 @@
                     <span>Comments</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="{!! action('admin\CommentController@index') !!}">All Comments</a> </li>
-                    <li><a href="{!! action('admin\BlogController@getCreate') !!}">Create Post</a> </li>
+                </ul>
+            </li>
+            <li class="menu-list">
+                <a href="{!! action('admin\CategoriesController@index') !!}"><i class="lnr lnr-leaf"></i>
+                    <span>Categories</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{!! action('admin\CategoriesController@index') !!}">All Categories</a> </li>
+                    <li><a href="{!! action('admin\CategoriesController@getCreate') !!}">Create Category</a> </li>
                 </ul>
             </li>
             <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>

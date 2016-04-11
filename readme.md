@@ -62,3 +62,8 @@ Day 13:
 Day 14: 
 - add comments confirmation in admin
 - show comment that have confirmed by admin
+
+Day 15 : 
+- add categories table
+- add category relation table
+- CRUD categories
