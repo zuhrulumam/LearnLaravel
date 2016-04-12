@@ -29,7 +29,7 @@
         <tbody>
             @foreach($comments as $comment)
             <tr>
-                <td><a href="{!! action('admin\BlogController@getReadPost', ['slug'=>$comment->comment_slug]) !!}">{{ $comment->comment_slug }}</a></td>
+                <td><a href="{!! action('admin\CommentController@read', ['slug'=>$comment->comment_slug]) !!}">{{ $comment->comment_slug }}</a></td>
                 <td>{{ $comment->comment_content }}</td>
                 <td>{{ $comment->comment_created_by }}</td>
                 <td>
@@ -45,7 +45,7 @@
                     @endif
                 </td>
                 <td class="selectable">
-                    <a class="btn btn-success btn-lg" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$comment->comment_slug]) !!}">
+                    <a class="btn btn-success btn-lg" href="{!! action('admin\CommentController@getEdit', ['slug'=>$comment->comment_slug]) !!}">
                         <span class="lnr lnr-pencil"></span> Edit
                     </a>                    
                     <a data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
@@ -59,8 +59,6 @@
         </tbody>
     </table>
     @endif
-
-    <a href="{!! action('admin\CommentController@getCreate') !!}" class="btn btn-block btn-primary">Add Comment</a>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

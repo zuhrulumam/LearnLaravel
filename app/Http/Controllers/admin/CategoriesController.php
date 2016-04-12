@@ -56,13 +56,19 @@ class CategoriesController extends Controller {
 
         return redirect('admin/categories')->with('message', "Success edit category with slug " . $slug);
     }
-    
+
     public function postDelete($slug) {
         $category = Categories::whereCategorySlug($slug)->first();
-        
+
         $category->delete();
-        
-        return redirect("admin/categories")->with('message', "Succees deleted category with slug ".$slug);
+
+        return redirect("admin/categories")->with('message', "Succees deleted category with slug " . $slug);
+    }
+
+    public function read($slug) {
+        $category = Categories::whereCategorySlug($slug)->first();
+
+        return view("admin.categories.read", ['category' => $category]);
     }
 
 }

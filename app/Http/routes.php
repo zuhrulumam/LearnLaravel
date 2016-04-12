@@ -55,9 +55,8 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::get("/admin/changeStatus/{slug?}/{status?}", "admin\CommentController@changeStatus");
     
-    Route::get("admin/create-comment", "admin\CommentController@getCreate");
-    Route::post("admin/create-comment", "admin\CommentController@postCreate");
-
+    Route::get("admin/{slug}/read-comment", "admin\CommentController@read");
+    
     Route::get("admin/{slug}/edit-comment", "admin\CommentController@getEdit");
     Route::post("admin/{slug}/edit-comment", "admin\CommentController@postEdit");
     
@@ -80,6 +79,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => ['web']], function() {
     Route::get("/admin/categories", "admin\CategoriesController@index");
 
+    Route::get("admin/{slug}/read-category", "admin\CategoriesController@read");
+    
     Route::get("admin/create-category", "admin\CategoriesController@getCreate");
     Route::post("admin/create-category", "admin\CategoriesController@postCreate");
 

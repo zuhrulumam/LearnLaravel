@@ -22,6 +22,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Created by</th>
+                <th>Categories</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -30,7 +31,12 @@
             <tr>
                 <td><a href="{!! action('admin\BlogController@getReadPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></td>
                 <td>{{ $post->blog_content }}</td>
-                  <td>{{ $post->blog_created_by }}</td>
+                <td>{{ $post->blog_created_by }}</td>
+                <td>
+                    @foreach($post->categories as $category)
+                    {{ $category->category_name }},
+                    @endforeach
+                </td>
                 <td class="selectable">
                     <a class="btn btn-success btn-lg" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$post->slug]) !!}">
                         <span class="lnr lnr-pencil"></span> Edit
@@ -84,7 +90,7 @@
         modal.find('.modal-text').text('Are you sure to delete post with slug   ' + slug);
 
         var action = "{!! action('admin\BlogController@postDelete', ['slug'=>'slug']) !!}";
-        action = action.replace('slug', slug);        
+        action = action.replace('slug', slug);
 
         modal.find('.modal-form').attr('action', action);
     });

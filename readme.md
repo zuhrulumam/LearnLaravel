@@ -67,3 +67,7 @@ Day 15 :
 - add categories table
 - add category relation table
 - CRUD categories
+
+Day 16 :
+- CRUD Comments
+- learn many-to-many relation (post-categories)

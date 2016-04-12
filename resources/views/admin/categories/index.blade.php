@@ -29,7 +29,9 @@
         <tbody>
             @foreach($categories as $category)
             <tr>
-                <td>{{ $category->category_slug }}</td>
+                <td>
+                    <a class="btn btn-success btn-lg" href="{!! action('admin\CategoriesController@read', ['slug'=>$category->category_slug]) !!}">{{ $category->category_slug }}</a>
+                </td>
                 <td>{{ $category->category_name }}</td>
                 <td>{{ $category->category_description }}</td>
                 <td>{{ date("d F Y", strtotime($category->created_at)) }}</td>              
