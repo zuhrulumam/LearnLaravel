@@ -23,6 +23,7 @@
                 <th>Content</th>
                 <th>Created by</th>
                 <th>Categories</th>
+                <th>Featured Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -37,6 +38,7 @@
                     {{ $category->category_name }},
                     @endforeach
                 </td>
+                <td>{{ $post->blog_featured_image }}</td>
                 <td class="selectable">
                     <a class="btn btn-success btn-lg" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$post->slug]) !!}">
                         <span class="lnr lnr-pencil"></span> Edit

@@ -27,10 +27,19 @@ class BlogController extends Controller {
     public function postCreate(BlogFormRequest $request) {
         $slug = uniqid();
 
+        $filename = "";
+        if ($request->hasFile("image")) {
+            $destinationPath = "images/upload";
+            $filename = $request->file("image")->getClientOriginalName();
+
+            $request->file("image")->move($destinationPath, $filename);
+        }
+
         $blogPost = new Blog([
             'blog_title' => $request->get('title'),
             'blog_content' => $request->get('content'),
-            'slug' => $slug
+            'slug' => $slug,
+            'blog_featured_image' => $filename
         ]);
 
         $blogPost->save();
@@ -45,7 +54,7 @@ class BlogController extends Controller {
             $cur_cat = $categories[$i];
             array_push($data_relation, ['relation_blog_id'=>$blog_id, 'relation_category_id'=>$cur_cat]);
         }
-        
+//        
         CatRelation::insert($data_relation);
 //
         return redirect('admin/posts')->with('message', 'Operation Successful ! Post saved with slug ' . $slug);

@@ -71,3 +71,7 @@ Day 15 :
 Day 16 :
 - CRUD Comments
 - learn many-to-many relation (post-categories)
+
+Day 17 : 
+- relation delete
+- add featured image

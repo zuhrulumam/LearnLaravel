@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model {
 
-    protected $fillable = ['blog_title', 'blog_content', 'slug'];
+    protected $fillable = ['blog_title', 'blog_content', 'slug', "blog_featured_image"];
     protected $guarded = ['blog_id'];
     
     protected $table = 'blog';
@@ -18,6 +18,17 @@ class Blog extends Model {
     
     public function categories() {
         return $this->belongsToMany('App\Categories', 'category_relation','relation_blog_id', 'relation_category_id');
+    }
+    
+    ///the documentation is at https://laravel.com/docs/5.2/eloquent#events
+    //http://stackoverflow.com/questions/14174070/automatically-deleting-related-rows-in-laravel-eloquent-orm
+    protected static function boot() {
+        parent::boot();
+
+        static::deleting(function($blog) { 
+             $blog->comments()->delete();
+             $blog->categories()->detach();
+        });
     }
 
 }

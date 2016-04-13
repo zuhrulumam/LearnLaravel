@@ -27,7 +27,7 @@
 
     @endif
 
-    <form method="post" id="createForm" class="form-horizontal">
+    <form method="post" id="createForm" class="form-horizontal" enctype="multipart/form-data">
         @foreach ($errors->all() as $error)
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -58,7 +58,15 @@
                 <br>
                 @endforeach
             </div>
-        </div>        
+        </div>
+
+        <div class="form-group" >
+            <label class="control-label">Featured Image</label>
+            <div class="col-sm-12">
+                <input type="file" class="form-control1" placeholder="Featured Image" name="image" value="{{ old('image') }}">
+            </div>
+
+        </div>
 
         <button class="btn-success btn btn-block" type="submit">Submit</button>
 

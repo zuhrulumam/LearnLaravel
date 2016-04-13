@@ -26,6 +26,13 @@ class BlogFormRequest extends Request
         return [
             'title' => 'required|max:255',
             'content' => 'required|min:10',
+            'image' => 'image'
+        ];
+    }
+    
+    public function messages() {
+        return [
+            "image" => "Featured image must be an image (png, jpg, bmp)"
         ];
     }
 }
