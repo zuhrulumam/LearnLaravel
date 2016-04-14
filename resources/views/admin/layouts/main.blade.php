@@ -9,17 +9,23 @@
         <link href="{!! asset('css/font-awesome.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/icon-font.min.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/animate.css') !!}" rel='stylesheet' type='text/css' />
+        
+        <link href="{!! asset('css/easyui.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/icon.css') !!}" rel='stylesheet' type='text/css' />
 
         <script src="{!! asset('js/jquery-1.10.2.min.js') !!}"></script>
+
+        <script src="{!! asset('js/jquery.easyui.min.js') !!}"></script>
+
         <script src="{!! asset('js/Chart.js') !!}"></script>
         <script src="{!! asset('js/wow.min.js') !!}"></script>
         <script>
                     new WOW().init();</script>
-        
+
         <script src="{!! asset('js/jquery.validate.min.js') !!}"></script>
-        
+
         <script src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
-        
+
         <script src="{!! asset('js/jquery.pjax.js') !!}"></script>
 
         @yield('css')
@@ -45,6 +51,7 @@
         <script src="{!! asset('js/jquery.nicescroll.js') !!}"></script>
         <script src="{!! asset('js/scripts.js') !!}"></script>
         <script src="{!! asset('js/bootstrap.min.js') !!}"></script>
+
 
 
         @yield('js')

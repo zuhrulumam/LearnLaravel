@@ -16,15 +16,20 @@
     @if($posts->isEmpty())
     There is no post yet !! 
     @else
-    <table class="ui selectable inverted table">
+    <table id="dg" title="My Users" class="easyui-datagrid" 
+           data-options="
+           iconCls: 'icon-edit',
+           singleSelect: true,
+           toolbar: '#tb'           
+           ">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Created by</th>
-                <th>Categories</th>
-                <th>Featured Image</th>
-                <th>Actions</th>
+                <th field='blog_title'>Title</th>
+                <th field='blog_content'>Content</th>
+                <th field='blog_crated_by'>Created by</th>
+                <th field='blog_categories'>Categories</th>
+                <th field='blog_featured_image'>Featured Image</th>
+                <th field='action'>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +58,13 @@
             @endforeach
         </tbody>
     </table>
+    <div id="tb" style="height:auto">
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append()">Append</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit()">Remove</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept()">Accept</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()">Reject</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="getChanges()">GetChanges</a>
+    </div>
     @endif
 
     <!-- Modal -->

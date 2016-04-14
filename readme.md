@@ -75,3 +75,6 @@ Day 16 :
 Day 17 : 
 - relation delete
 - add featured image
+
+Day 18 : 
+- trying jeasyui (http://www.jeasyui.com/)
