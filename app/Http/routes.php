@@ -88,4 +88,6 @@ Route::group(['middleware' => ['web']], function() {
     Route::post("admin/{slug}/edit-category", "admin\CategoriesController@postEdit");
     
     Route::post("admin/{slug}/delete-category", "admin\CategoriesController@postDelete");
+   
+    
 });

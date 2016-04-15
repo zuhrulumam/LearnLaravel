@@ -78,3 +78,6 @@ Day 17 :
 
 Day 18 : 
 - trying jeasyui (http://www.jeasyui.com/)
+
+Day 19 : 
+- adding laravel-jqgrid (https://github.com/mgallegos/laravel-jqgrid)

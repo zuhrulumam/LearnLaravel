@@ -4,18 +4,14 @@
         <title>@yield('title')</title>
 
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        
         <link href="{!! asset('css/bootstrap.min.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/style.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/font-awesome.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/icon-font.min.css') !!}" rel='stylesheet' type='text/css' />
-        <link href="{!! asset('css/animate.css') !!}" rel='stylesheet' type='text/css' />
+        <link href="{!! asset('css/animate.css') !!}" rel='stylesheet' type='text/css' />        
         
-        <link href="{!! asset('css/easyui.css') !!}" rel='stylesheet' type='text/css' />
-        <link href="{!! asset('css/icon.css') !!}" rel='stylesheet' type='text/css' />
-
-        <script src="{!! asset('js/jquery-1.10.2.min.js') !!}"></script>
-
-        <script src="{!! asset('js/jquery.easyui.min.js') !!}"></script>
+        <script src="{!! asset('js/jquery-2.2.3.min.js') !!}"></script>
 
         <script src="{!! asset('js/Chart.js') !!}"></script>
         <script src="{!! asset('js/wow.min.js') !!}"></script>

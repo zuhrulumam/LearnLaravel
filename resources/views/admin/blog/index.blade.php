@@ -1,6 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Posts')
 
+
 @section('content')
 @if(session('message'))
 
@@ -16,20 +17,16 @@
     @if($posts->isEmpty())
     There is no post yet !! 
     @else
-    <table id="dg" title="My Users" class="easyui-datagrid" 
-           data-options="
-           iconCls: 'icon-edit',
-           singleSelect: true,
-           toolbar: '#tb'           
-           ">
+
+    <table>
         <thead>
             <tr>
-                <th field='blog_title'>Title</th>
-                <th field='blog_content'>Content</th>
-                <th field='blog_crated_by'>Created by</th>
-                <th field='blog_categories'>Categories</th>
-                <th field='blog_featured_image'>Featured Image</th>
-                <th field='action'>Actions</th>
+                <th >Title</th>
+                <th >Content</th>
+                <th>Created by</th>
+                <th >Categories</th>
+                <th >Featured Image</th>
+                <th >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -58,13 +55,7 @@
             @endforeach
         </tbody>
     </table>
-    <div id="tb" style="height:auto">
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="append()">Append</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="removeit()">Remove</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="accept()">Accept</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()">Reject</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="getChanges()">GetChanges</a>
-    </div>
+    
     @endif
 
     <!-- Modal -->
@@ -95,22 +86,21 @@
 @section('js')
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);// Button that triggered the modal
+        var button = $(event.relatedTarget); // Button that triggered the modal
         var slug = button.data('id'); // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this);
         modal.find('.modal-title').text('Delete  ' + slug);
         modal.find('.modal-text').text('Are you sure to delete post with slug   ' + slug);
-
         var action = "{!! action('admin\BlogController@postDelete', ['slug'=>'slug']) !!}";
         action = action.replace('slug', slug);
-
         modal.find('.modal-form').attr('action', action);
-    });
-</script>
+    });</script>
 
 <script>
-    $(document).pjax('a', '#pjax-container')
+//    $(document).pjax('a', '#pjax-container')
 </script>
+
+
 @endsection

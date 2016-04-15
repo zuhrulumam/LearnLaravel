@@ -70,5 +70,5 @@ class CategoriesController extends Controller {
 
         return view("admin.categories.read", ['category' => $category]);
     }
-
+   
 }
