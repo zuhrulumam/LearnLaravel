@@ -2,34 +2,25 @@
 @section('title', 'Read Category')
 
 @section('content')
-<div class="ui card">
-    <div class="content">
-        <div class="header">{{ $category->category_name }}</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ $category->category_name }}</h3>
     </div>
-    <div class="content">
-        <h4 class="ui sub header">Content</h4>
-        <div class="ui small feed">
-            <div class="event">
-                <div class="content">
-                    <div class="summary">
-                        {{ $category->category_description }}
-                        <br>
-                        Post with this category <br>
-                        @foreach($category->posts as $post)
-                        {{ $post->blog_title }},
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="panel-body">
+        {{ $category->category_description }}
+        <br>
+        Post with this category <br>
+        @foreach($category->posts as $post)
+        {{ $post->blog_title }},
+        @endforeach
     </div>
-    <div class="extra content">
-        <a href="{!! action('admin\BlogController@getEditPost', ['slug'=>$category->category_slug]) !!}">Edit</a>
+    <div class="panel-footer">
+        <a class="btn btn-primary" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$category->category_slug]) !!}">Edit</a>
         <form method="post" action="{!! action('admin\BlogController@postDelete', ['slug'=>$category->category_slug]) !!}">
             {!! csrf_field() !!}
-            <button class="fluid  ui red button" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete</button>
         </form>
     </div>
 </div>
+
 @endsection

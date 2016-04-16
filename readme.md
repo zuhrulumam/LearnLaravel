@@ -81,3 +81,8 @@ Day 18 :
 
 Day 19 : 
 - adding laravel-jqgrid (https://github.com/mgallegos/laravel-jqgrid)
+
+Day 20 : 
+- just make things tidy
+- read laravel-datatables (https://github.com/yajra/laravel-datatables) and dropzone-laravel-image-upload (https://github.com/codingo-me/dropzone-laravel-image-upload)
+- adding media table 

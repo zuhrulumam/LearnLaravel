@@ -11,7 +11,7 @@
         <link href="{!! asset('css/icon-font.min.css') !!}" rel='stylesheet' type='text/css' />
         <link href="{!! asset('css/animate.css') !!}" rel='stylesheet' type='text/css' />        
         
-        <script src="{!! asset('js/jquery-2.2.3.min.js') !!}"></script>
+        <script src="{!! asset('js/jquery-1.10.2.min.js') !!}"></script>
 
         <script src="{!! asset('js/Chart.js') !!}"></script>
         <script src="{!! asset('js/wow.min.js') !!}"></script>

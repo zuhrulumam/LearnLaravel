@@ -16,48 +16,50 @@
     @if($comments->isEmpty())
     There is no comment yet !! 
     @else
-    <table class="ui selectable inverted table">
-        <thead>
-            <tr>
-                <th>Comment Slug</th>
-                <th>Comment Content</th>
-                <th>Created By</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($comments as $comment)
-            <tr>
-                <td><a href="{!! action('admin\CommentController@read', ['slug'=>$comment->comment_slug]) !!}">{{ $comment->comment_slug }}</a></td>
-                <td>{{ $comment->comment_content }}</td>
-                <td>{{ $comment->comment_created_by }}</td>
-                <td>
-                    @if($comment->status == 0) 
-                    <a class="btn btn-danger btn-lg" data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#statusModal" data-status="0">
-                        <span class="lnr lnr-pencil"></span> Not confirmed
-                    </a>  
-                    @else 
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Comment Slug</th>
+                    <th>Comment Content</th>
+                    <th>Created By</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($comments as $comment)
+                <tr>
+                    <td><a href="{!! action('admin\CommentController@read', ['slug'=>$comment->comment_slug]) !!}">{{ $comment->comment_slug }}</a></td>
+                    <td>{{ $comment->comment_content }}</td>
+                    <td>{{ $comment->comment_created_by }}</td>
+                    <td>
+                        @if($comment->status == 0) 
+                        <a class="btn btn-danger btn-lg" data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#statusModal" data-status="0">
+                            <span class="lnr lnr-pencil"></span> Not confirmed
+                        </a>  
+                        @else 
 
-                    <a class="btn btn-success btn-lg" data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#statusModal" data-status="1">
-                        <span class="lnr lnr-pencil"></span> Confirmed
-                    </a>  
-                    @endif
-                </td>
-                <td class="selectable">
-                    <a class="btn btn-success btn-lg" href="{!! action('admin\CommentController@getEdit', ['slug'=>$comment->comment_slug]) !!}">
-                        <span class="lnr lnr-pencil"></span> Edit
-                    </a>                    
-                    <a data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
-                        <span class="lnr lnr-trash"></span> Delete
-                    </a>
+                        <a class="btn btn-success btn-lg" data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#statusModal" data-status="1">
+                            <span class="lnr lnr-pencil"></span> Confirmed
+                        </a>  
+                        @endif
+                    </td>
+                    <td class="selectable">
+                        <a class="btn btn-success btn-lg" href="{!! action('admin\CommentController@getEdit', ['slug'=>$comment->comment_slug]) !!}">
+                            <span class="lnr lnr-pencil"></span> Edit
+                        </a>                    
+                        <a data-id="{{ $comment->comment_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+                            <span class="lnr lnr-trash"></span> Delete
+                        </a>
 
 
-                </td>
-            </tr>        
-            @endforeach
-        </tbody>
-    </table>
+                    </td>
+                </tr>        
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     @endif
 
     <!-- Modal -->

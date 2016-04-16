@@ -90,4 +90,5 @@ class BlogController extends Controller {
         return view('admin.blog.read', ['post' => $post]);
     }
 
+    
 }

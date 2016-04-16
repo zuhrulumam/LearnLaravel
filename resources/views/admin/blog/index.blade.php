@@ -17,45 +17,46 @@
     @if($posts->isEmpty())
     There is no post yet !! 
     @else
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th >Title</th>
+                    <th >Content</th>
+                    <th>Created by</th>
+                    <th >Categories</th>
+                    <th >Featured Image</th>
+                    <th >Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($posts as $post)
+                <tr>
+                    <td><a href="{!! action('admin\BlogController@getReadPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></td>
+                    <td>{{ $post->blog_content }}</td>
+                    <td>{{ $post->blog_created_by }}</td>
+                    <td>
+                        @foreach($post->categories as $category)
+                        {{ $category->category_name }},
+                        @endforeach
+                    </td>
+                    <td>{{ $post->blog_featured_image }}</td>
+                    <td class="selectable">
+                        <a class="btn btn-success btn-lg" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$post->slug]) !!}">
+                            <span class="lnr lnr-pencil"></span> Edit
+                        </a>                    
+                        <a data-id="{{ $post->slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+                            <span class="lnr lnr-trash"></span> Delete
+                        </a>
 
-    <table>
-        <thead>
-            <tr>
-                <th >Title</th>
-                <th >Content</th>
-                <th>Created by</th>
-                <th >Categories</th>
-                <th >Featured Image</th>
-                <th >Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($posts as $post)
-            <tr>
-                <td><a href="{!! action('admin\BlogController@getReadPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></td>
-                <td>{{ $post->blog_content }}</td>
-                <td>{{ $post->blog_created_by }}</td>
-                <td>
-                    @foreach($post->categories as $category)
-                    {{ $category->category_name }},
-                    @endforeach
-                </td>
-                <td>{{ $post->blog_featured_image }}</td>
-                <td class="selectable">
-                    <a class="btn btn-success btn-lg" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$post->slug]) !!}">
-                        <span class="lnr lnr-pencil"></span> Edit
-                    </a>                    
-                    <a data-id="{{ $post->slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
-                        <span class="lnr lnr-trash"></span> Delete
-                    </a>
 
+                    </td>
+                </tr>        
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
-                </td>
-            </tr>        
-            @endforeach
-        </tbody>
-    </table>
-    
     @endif
 
     <!-- Modal -->

@@ -137,7 +137,6 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Mgallegos\LaravelJqgrid\LaravelJqgridServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -182,7 +181,5 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         
-        'GridRender' => Mgallegos\LaravelJqgrid\Facades\GridRender::class, 
-        'GridEncoder' => Mgallegos\LaravelJqgrid\Facades\GridEncoder::class,
     ],
 ];
