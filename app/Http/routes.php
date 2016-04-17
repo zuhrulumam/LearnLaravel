@@ -89,3 +89,19 @@ Route::group(['middleware' => ['web']], function() {
     Route::post("admin/{slug}/delete-category", "admin\CategoriesController@postDelete");
 
 });
+
+// media
+Route::group(['middleware' => ['web']], function() {
+    Route::get("/admin/media", "admin\MediaController@index");
+
+    Route::get("admin/{slug}/read-media", "admin\MediaController@read");
+
+    Route::get("admin/create-media", "admin\MediaController@getCreate");
+    Route::post("admin/create-media", "admin\MediaController@postCreate");
+
+    Route::get("admin/{slug}/edit-media", "admin\MediaController@getEdit");
+    Route::post("admin/{slug}/edit-media", "admin\MediaController@postEdit");
+
+    Route::post("admin/{slug}/delete-media", "admin\MediaController@postDelete");
+
+});

@@ -86,3 +86,6 @@ Day 20 :
 - just make things tidy
 - read laravel-datatables (https://github.com/yajra/laravel-datatables) and dropzone-laravel-image-upload (https://github.com/codingo-me/dropzone-laravel-image-upload)
 - adding media table 
+
+Day 21 : 
+- trying dropzonejs (http://www.dropzonejs.com/)

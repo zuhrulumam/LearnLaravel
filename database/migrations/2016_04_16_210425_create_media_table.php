@@ -13,7 +13,8 @@ class CreateMediaTable extends Migration
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
-            $table->increments('id_media');
+            $table->increments('media_id');
+            $table->string('media_slug');
             $table->string('media_name');
             $table->text('media_description')->nulable();
             $table->timestamps();
