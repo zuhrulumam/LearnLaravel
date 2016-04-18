@@ -46,6 +46,14 @@
                     <li><a href="{!! action('admin\CategoriesController@getCreate') !!}">Create Category</a> </li>
                 </ul>
             </li>
+            <li class="menu-list">
+                <a href="{!! action('admin\MediaController@index') !!}"><i class="lnr lnr-picture"></i>
+                    <span>Media</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{!! action('admin\MediaController@index') !!}">All Media</a> </li>
+                    <li><a href="{!! action('admin\MediaController@getCreate') !!}">Create Media</a> </li>
+                </ul>
+            </li>
             <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
             <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
             <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>

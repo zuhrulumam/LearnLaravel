@@ -89,3 +89,6 @@ Day 20 :
 
 Day 21 : 
 - trying dropzonejs (http://www.dropzonejs.com/)
+
+Day 22 : 
+-implementing dropzonejs (still curious about this js)

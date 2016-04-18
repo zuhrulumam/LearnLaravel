@@ -1,19 +1,11 @@
-Dropzone.autoDiscover = false;
-var myDropzone = new Dropzone("div#dropzoneFileUpload", {
-    url: "/dropzone/uploadFiles",
-    params: {
-        // _token: token
-    }
-});
-
-var photo_counter = 0;
-//myDropzone.options = {
-myDropzone.options = {
+//var photo_counter = 0;
+////myDropzone.options = {
+Dropzone.options.createForm = {
     uploadMultiple: false,
     parallelUploads: 100,
     maxFilesize: 8,
-    previewsContainer: '#dropzonePreview',
-    previewTemplate: document.querySelector('#preview-template').innerHTML,
+//    previewsContainer: '#dropzonePreview',
+//    previewTemplate: document.querySelector('#preview-template').innerHTML,
     addRemoveLinks: true,
     dictRemoveFile: 'Remove',
     dictFileTooBig: 'Image is bigger than 8MB',
@@ -57,7 +49,10 @@ myDropzone.options = {
         return _results;
     },
     success: function (file, done) {
-        photo_counter++;
-        $("#photoCounter").text("(" + photo_counter + ")");
+        console.log("berhasil hore");
     }
-}
+};
+
+$(document).ready(function(){
+    console.log("lalalal");
+});

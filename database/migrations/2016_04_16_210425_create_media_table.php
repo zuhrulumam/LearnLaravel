@@ -16,7 +16,7 @@ class CreateMediaTable extends Migration
             $table->increments('media_id');
             $table->string('media_slug');
             $table->string('media_name');
-            $table->text('media_description')->nulable();
+            $table->text('media_description')->nullable();
             $table->timestamps();
         });
     }
