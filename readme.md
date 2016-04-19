@@ -91,4 +91,8 @@ Day 21 :
 - trying dropzonejs (http://www.dropzonejs.com/)
 
 Day 22 : 
--implementing dropzonejs (still curious about this js)
+- implementing dropzonejs (still curious about this js)
+
+Day 23 :
+- CRUD media
+- generating thumbnail with imageintervention (http://image.intervention.io)

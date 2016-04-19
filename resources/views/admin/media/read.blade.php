@@ -1,22 +1,21 @@
 @extends('admin.layouts.main')
-@section('title', 'Read Category')
+@section('title', 'Read Media')
 
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">{{ $category->category_name }}</h3>
+        <h3 class="panel-title">{{ $media->media_name }}</h3>
     </div>
     <div class="panel-body">
-        {{ $category->category_description }}
+        <img src="{!! asset('images/upload/'.$media->media_name) !!}" class="img-responsive center-block" width="50%">
         <br>
-        Post with this category <br>
-        @foreach($category->posts as $post)
-        {{ $post->blog_title }},
-        @endforeach
+       Description :  {{ $media->media_description }}
+
+
     </div>
     <div class="panel-footer">
-        <a class="btn btn-primary" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$category->category_slug]) !!}">Edit</a>
-        <form method="post" action="{!! action('admin\BlogController@postDelete', ['slug'=>$category->category_slug]) !!}">
+        <a class="btn btn-primary" href="{!! action('admin\MediaController@getEdit', ['slug'=>$media->media_slug]) !!}">Edit</a>
+        <form method="post" action="{!! action('admin\MediaController@postDelete', ['slug'=>$media->media_slug]) !!}">
             {!! csrf_field() !!}
             <button class="btn btn-danger" type="submit">Delete</button>
         </form>

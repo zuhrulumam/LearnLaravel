@@ -1,10 +1,10 @@
 @extends('admin.layouts.main')
-@section('title', 'Edit Category')
+@section('title', 'Edit Media')
 
 @section('content')
 
 <div class="graphs">
-    <h3 class="blank1">Edit Category Slug : {{ $category->slug }}</h3>  
+    <h3 class="blank1">Edit Media {{ $media->media_name }}</h3>  
 
 
     @if(session('message'))
@@ -16,6 +16,11 @@
 
     @endif
 
+        <div class="col-sm-12">
+            <img src="{!! asset('images/upload/'.$media->media_name) !!}" class="img-responsive center-block" width="50%">
+        </div>
+
+    <br>
     <form method="post">
         @foreach ($errors->all() as $error)
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -24,17 +29,11 @@
         </div>        
         @endforeach
         {!! csrf_field() !!}
-        <div class="form-group" >
-            <label class="control-label">Category Name</label>
-            <div class="col-sm-12">
-                <input type="text" class="form-control1" placeholder="Category Name" name="cat_name" value="{{ $category->category_name }}">
-            </div>
 
-        </div>
         <div class="form-group" >
-            <label for="focusedinput" class="control-label">Category Description</label>
+            <label for="focusedinput" class="control-label">Media Description</label>
             <div class="col-sm-12">
-                <textarea class="form-control1" placeholder="Category Description" id="cat_desc" name="cat_desc">{{ $category->category_description }}</textarea>
+                <textarea class="form-control1" placeholder="Media Description" id="cat_desc" name="media_desc">{{ $media->media_description }}</textarea>
 
             </div>
         </div>

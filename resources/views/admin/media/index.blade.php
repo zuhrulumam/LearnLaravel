@@ -33,7 +33,7 @@
                 @foreach($media as $image)
                 <tr>
                     <td>
-                        <a href="{!! action('admin\MediaController@read', ['slug'=>$image->media_slug]) !!}">{{ $image->media_slug }}</a>
+                        <a href="{!! action('admin\MediaController@read', ['slug'=>$image->media_slug]) !!}"><img src="{!! asset('images/upload/thumb_'.$image->media_name) !!}" class="img-responsive"> </a>
                     </td>
                     <td>{{ $image->media_name }}</td>
                     <td>{{ $image->media_description }}</td>
@@ -99,6 +99,6 @@
 
 
 <script>
-    $(document).pjax('a', '#pjax-container')
+    $(document).pjax('a', '#pjax-container');
 </script>
 @endsection
