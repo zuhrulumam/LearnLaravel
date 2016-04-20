@@ -7,12 +7,30 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Categories;
 use App\Http\Requests\CategoriesFormRequest;
+use Yajra\Datatables\Datatables;
 
 class CategoriesController extends Controller {
 
+    public function postTrash($slug) {
+        
+    }
+
+    public function getAllData() {
+
+        return Datatables::of(Categories::all())
+                        ->addColumn('action', function ($category) {
+                            return '<a href="' . action("admin\CategoriesController@getEdit", ['slug' => $category->category_slug]) . '" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a> <a data-id="'.$category->category_slug .'" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
+                            <span class="lnr lnr-cross"></span> Delete
+                        </a>';
+                        })
+//                        ->editColumn('id', 'ID: {{$id}}')
+                        ->make(true);
+    }
+
     public function index() {
         $categories = Categories::paginate(3);
-
+//
+//        echo action('admin\CategoriesController@index');
         return view("admin.categories.index", ['categories' => $categories]);
     }
 
@@ -70,6 +88,5 @@ class CategoriesController extends Controller {
 
         return view("admin.categories.read", ['category' => $category]);
     }
- 
-   
+
 }

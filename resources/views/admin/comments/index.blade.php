@@ -104,7 +104,7 @@
 </div>
 @endsection
 
-@section('js')
+@push('js')
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);// Button that triggered the modal
@@ -151,4 +151,4 @@
 <script>
     $(document).pjax('a', '#pjax-container')
 </script>
-@endsection
+@endpush

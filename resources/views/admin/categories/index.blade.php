@@ -19,7 +19,7 @@
     There is no category yet !! 
     @else
     <div class="table-responsive">
-        <table class="table table-hover table-bordered">
+<!--        <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>Category Slug</th>
@@ -42,13 +42,27 @@
                         <a class="btn btn-success btn-lg" href="{!! action('admin\CategoriesController@getEdit', ['slug'=>$category->category_slug]) !!}">
                             <span class="lnr lnr-pencil"></span> Edit
                         </a>                    
+                        <a class="btn btn-warning btn-lg" href="{!! action('admin\CategoriesController@postTrash', ['slug'=>$category->category_slug]) !!}">
+                            <span class="lnr lnr-trash"></span> Trash
+                        </a>                    
                         <a data-id="{{ $category->category_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
-                            <span class="lnr lnr-trash"></span> Delete
+                            <span class="lnr lnr-cross"></span> Delete
                         </a>
                     </td>
                 </tr>        
                 @endforeach
             </tbody>
+        </table>-->
+        <table class="table table-bordered" id="categories-table">
+            <thead>
+                <tr>
+                    <th>Category Slug</th>
+                    <th>Category Name</th>
+                    <th>Category Description</th>
+                    <th>Created at</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
         </table>
     </div>
     @endif
@@ -79,7 +93,7 @@
 </div>
 @endsection
 
-@section('js')
+@push('js')
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);// Button that triggered the modal
@@ -101,4 +115,21 @@
 <script>
     $(document).pjax('a', '#pjax-container')
 </script>
-@endsection
+        <!--<script src="{!! asset('js/datatables/datatables.min.js') !!}"></script>-->
+<script>
+    $(function () {
+        $('#categories-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! action("admin\CategoriesController@getAllData") !!}',
+            columns: [
+                {data: 'category_slug'},
+                {data: 'category_name', name: 'category_name'},
+                {data: 'category_description', name: 'category_description'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'action', name: 'action', orderable: false, searchable: false}
+            ]
+        });
+    });
+</script>
+@endpush

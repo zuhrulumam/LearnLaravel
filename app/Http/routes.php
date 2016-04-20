@@ -47,6 +47,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('admin/{slug?}/delete', 'admin\BlogController@postDelete');
 
     Route::get('admin/{slug?}/read', 'admin\BlogController@getReadPost');
+
+    Route::post('admin/{slug?}/soft-delete-post', 'admin\BlogController@postSoftDelete');
 });
 
 // comments
@@ -88,6 +90,13 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::post("admin/{slug}/delete-category", "admin\CategoriesController@postDelete");
 
+    Route::post('admin/{slug?}/trash-category', 'admin\CategoriesController@postTrash');
+
+//    Route::controller('admin/categories', 'admin\CategoriesController', [
+//        'getAllData' => 'categories.data'
+//    ]);
+    
+    Route::get('admin/all-categories', 'admin\CategoriesController@getAllData');
 });
 
 // media
@@ -104,4 +113,8 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::post("admin/{slug}/delete-media", "admin\MediaController@postDelete");
 
+    Route::get('admin/trash-media', 'admin\MediaController@getTrash');
+    Route::post('admin/{slug?}/trash-media', 'admin\MediaController@postTrash');
+
+    Route::post('admin/{slug?}/restore-media', 'admin\MediaController@postRestore');
 });

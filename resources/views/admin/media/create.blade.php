@@ -43,8 +43,8 @@
 
     @endsection
 
-    @section('js')    
+    @push('js')    
 
     <script src="{!! asset('js/dropzone.min.js') !!}"></script>
     <script src="{!! asset('js/dropzone-config.js') !!}"></script>
-    @endsection
+    @endpush

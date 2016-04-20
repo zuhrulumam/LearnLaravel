@@ -11,9 +11,34 @@ use Intervention\Image\Facades\Image;
 
 class MediaController extends Controller {
 
+    public function postRestore($slug) {
+        $media = Media::whereMediaSlug($slug);
+
+        $media->restore();
+
+        return redirect('admin/media')->with("message", 'Success Restore media with slug ' . $slug);
+    }
+
+    public function getTrash() {
+        $media = Media::onlyTrashed()->get();
+        return view('admin.media.trash', ['media' => $media]);
+    }
+
+    public function postTrash($slug) {
+        $media = Media::whereMediaSlug($slug)->first();
+
+        $media->delete();
+
+        return redirect()->back()->with('message', 'Success Trashed media with slug ' . $slug);
+    }
+
     public function index() {
         $media = Media::all();
-        return view('admin.media.index', ['media' => $media]);
+
+        $trashed_item = Media::onlyTrashed()->get()->count();
+
+//        print_r($media->count());
+        return view('admin.media.index', ['media' => $media, 'trashed_item' => $trashed_item]);
     }
 
     public function getEdit($slug) {
@@ -66,8 +91,8 @@ class MediaController extends Controller {
                 unlink($thumbname);
             }
         }
-        
-        $media->delete();
+
+        $media->forceDelete();
 
         return redirect()->back()->with('message', 'Success Delete media with slug ' . $slug);
     }

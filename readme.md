@@ -96,3 +96,7 @@ Day 22 :
 Day 23 :
 - CRUD media
 - generating thumbnail with imageintervention (http://image.intervention.io)
+
+Day 24 :
+- trash, restore, delete permanent media
+- add datatables (https://github.com/yajra/laravel-datatables) 

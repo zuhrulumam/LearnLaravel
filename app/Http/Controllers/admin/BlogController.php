@@ -12,6 +12,10 @@ use App\CatRelation;
 
 class BlogController extends Controller {
 
+    public function postSoftDelete($slug) {
+        
+    }
+    
     public function index() {
         $posts = Blog::all();
 

@@ -14,10 +14,17 @@
 
 
     <h3 class="blank1">All Media</h3>
-
+    @if($trashed_item > 0 )
+    <a class="btn btn-success btn-sm" href="{!! action('admin\MediaController@getTrash') !!}">
+        <span class="lnr lnr-trash"></span> Get Trashed ({{ $trashed_item }})
+    </a>
+    @endif
     @if($media->isEmpty())
     There is no media yet !! 
     @else
+
+
+
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
             <thead>
@@ -30,7 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($media as $image)
+                @foreach($media as $image)                
                 <tr>
                     <td>
                         <a href="{!! action('admin\MediaController@read', ['slug'=>$image->media_slug]) !!}"><img src="{!! asset('images/upload/thumb_'.$image->media_name) !!}" class="img-responsive"> </a>
@@ -39,14 +46,21 @@
                     <td>{{ $image->media_description }}</td>
                     <td>{{ date("d F Y", strtotime($image->created_at)) }}</td>              
                     <td class="selectable">
-                        <a class="btn btn-success btn-lg" href="{!! action('admin\MediaController@getEdit', ['slug'=>$image->media_slug]) !!}">
+                        <a class="btn btn-success btn-sm" href="{!! action('admin\MediaController@getEdit', ['slug'=>$image->media_slug]) !!}">
                             <span class="lnr lnr-pencil"></span> Edit
-                        </a>                    
-                        <a data-id="{{ $image->media_slug }}" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
-                            <span class="lnr lnr-trash"></span> Delete
+                        </a> 
+                        <form method="post" action="{!! action('admin\MediaController@postTrash', ['slug'=>$image->media_slug]) !!}">                  
+                            {!! csrf_field() !!}
+                            <button class="btn btn-warning btn-sm" type="submit">
+                                <span class="lnr lnr-trash"></span> Trash
+                            </button>
+                        </form>                                           
+                        <a data-id="{{ $image->media_slug }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
+                            <span class="lnr lnr-cross"></span> Delete
                         </a>
                     </td>
-                </tr>        
+                </tr>  
+
                 @endforeach
             </tbody>
         </table>
@@ -79,7 +93,7 @@
 </div>
 @endsection
 
-@section('js')
+@push('js')
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);// Button that triggered the modal
@@ -101,4 +115,4 @@
 <script>
     $(document).pjax('a', '#pjax-container');
 </script>
-@endsection
+@endpush
