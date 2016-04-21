@@ -100,3 +100,6 @@ Day 23 :
 Day 24 :
 - trash, restore, delete permanent media
 - add datatables (https://github.com/yajra/laravel-datatables) 
+
+Day 25 : 
+- Auth in admin 

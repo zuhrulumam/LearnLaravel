@@ -4,7 +4,7 @@
 
 @section('content')
 @include('banner')
-
+                
 <!-- blog -->
 <div class="blog">
     <div class="blog-left">
@@ -29,12 +29,12 @@
             <p class="para"> {{ $post->blog_content }}</p>
             <div class="rd-mre">
                 <a href="{!! action('user\HomeController@readPost', ['slug'=>$post->slug]) !!}" class="hvr-bounce-to-bottom quod">Read More</a>
-            </div>
         </div>
+    </div>
         @endforeach
 
         {!! $posts->links() !!}
-    </div>
+</div>
     <div class="blog-right">
         <div class="sap_tabs">	
             <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">

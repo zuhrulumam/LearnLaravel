@@ -10,6 +10,7 @@ use App\Blog;
 use App\Categories;
 use App\CatRelation;
 
+use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller {
 
     public function postSoftDelete($slug) {
@@ -18,7 +19,7 @@ class BlogController extends Controller {
     
     public function index() {
         $posts = Blog::all();
-
+        print_r(\Auth::user());
         return view('admin.blog.index', ['posts' => $posts]);
     }
 

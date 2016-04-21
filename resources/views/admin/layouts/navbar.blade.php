@@ -14,15 +14,8 @@
 
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li class="active"><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
-            <li class="menu-list">
-                <a href="#"><i class="lnr lnr-cog"></i>
-                    <span>Components</span></a>
-                <ul class="sub-menu-list">
-                    <li><a href="grids.html">Grids</a> </li>
-                    <li><a href="widgets.html">Widgets</a></li>
-                </ul>
-            </li>
+            <li class="active"><a href="index.html"><i class="lnr lnr-home"></i><span>Dashboard</span></a></li>
+
             <li class="menu-list">
                 <a href="{!! action('admin\BlogController@index') !!}"><i class="lnr lnr-database"></i>
                     <span>Posts</span></a>
@@ -54,6 +47,7 @@
                     <li><a href="{!! action('admin\MediaController@getCreate') !!}">Create Media</a> </li>
                 </ul>
             </li>
+            <li><a href="{!! action('auth\AuthController@logout') !!}"><i class="lnr lnr-power-switch"></i><span>Logout</span></a></li>
             <li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
             <li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
             <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>

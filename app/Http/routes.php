@@ -22,20 +22,30 @@
   |
  */
 
+
 Route::group(['middleware' => ['web']], function () {
-    Route::get('cheatsheet', function () {
-        return view('cheatsheet');
+    Route::get('admin/login', function() {
+        return view('admin/auth/login');
     });
+    
+    Route::post('admin/login', 'auth\AuthController@postLogin');
+    
+    Route::get('admin/email-reset', 'auth\PasswordController@getEmail'); 
+    
+    Route::get('admin/password-reset', 'auth\PasswordController@getReset');  
+    
+    Route::get('admin/logout', 'auth\AuthController@logout');  
+});
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+
     Route::get('admin', function() {
         return view('admin/dashboard');
     });
-
-
-    Route::get('/', 'user\HomeController@index');
 });
 
 // crud blog post
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('admin/create-post', 'admin\BlogController@getCreate');
     Route::post('admin/create-post', 'admin\BlogController@postCreate');
 
@@ -52,7 +62,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 // comments
-Route::group(['middleware' => ['web']], function() {
+Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get("/admin/comments", "admin\CommentController@index");
 
     Route::get("/admin/changeStatus/{slug?}/{status?}", "admin\CommentController@changeStatus");
@@ -67,6 +77,11 @@ Route::group(['middleware' => ['web']], function() {
 
 //user route
 Route::group(['middleware' => ['web']], function () {
+
+    Route::get('cheatsheet', function () {
+        return view('cheatsheet');
+    });
+    Route::get('/', 'user\HomeController@index');
     Route::get("read/{slug?}", 'user\HomeController@readPost');
 
     Route::post("read/{slug?}", "user\HomeController@postComment");
@@ -77,7 +92,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 // categories
-Route::group(['middleware' => ['web']], function() {
+Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get("/admin/categories", "admin\CategoriesController@index");
 
     Route::get("admin/{slug}/read-category", "admin\CategoriesController@read");
@@ -95,12 +110,12 @@ Route::group(['middleware' => ['web']], function() {
 //    Route::controller('admin/categories', 'admin\CategoriesController', [
 //        'getAllData' => 'categories.data'
 //    ]);
-    
+
     Route::get('admin/all-categories', 'admin\CategoriesController@getAllData');
 });
 
 // media
-Route::group(['middleware' => ['web']], function() {
+Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get("/admin/media", "admin\MediaController@index");
 
     Route::get("admin/{slug}/read-media", "admin\MediaController@read");
@@ -118,3 +133,5 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::post('admin/{slug?}/restore-media', 'admin\MediaController@postRestore');
 });
+
+
