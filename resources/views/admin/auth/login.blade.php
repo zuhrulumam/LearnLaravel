@@ -47,6 +47,8 @@
                 </span>               
                 <div class="clearfix"> </div>
             </div>
+            
+            <a href="{!! action('auth\AuthController@redirectToProvider') !!}" class="btn btn-block btn-primary">Login With Facebook</a>
         </div>
 
     </div>

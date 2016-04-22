@@ -103,3 +103,6 @@ Day 24 :
 
 Day 25 : 
 - Auth in admin 
+
+Day 26 : 
+- laravel/socialite Facebook Auth

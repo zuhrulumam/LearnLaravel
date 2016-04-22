@@ -35,6 +35,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/password-reset', 'auth\PasswordController@getReset');  
     
     Route::get('admin/logout', 'auth\AuthController@logout');  
+    
+    Route::get('admin/social-auth', 'auth\AuthController@redirectToProvider');
+    Route::get('admin/social-auth/callback', 'auth\AuthController@handleProviderCallback');
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
