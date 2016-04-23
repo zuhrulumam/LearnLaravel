@@ -13,12 +13,17 @@
 @endif
 <div class="graphs">
     <h3 class="blank1">All Posts</h3>
+    @if($trashed_item > 0 )
+    <a class="btn btn-success btn-sm" href="{!! action('admin\BlogController@getTrashed') !!}">
+        <span class="lnr lnr-trash"></span> Get Trashed ({{ $trashed_item }})
+    </a>
+    @endif
 
     @if($posts->isEmpty())
     There is no post yet !! 
     @else
     <div class="table-responsive">
-        <table class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered" id="blog-table">
             <thead>
                 <tr>
                     <th >Title</th>
@@ -29,32 +34,6 @@
                     <th >Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach($posts as $post)
-                <tr>
-                    <td><a href="{!! action('admin\BlogController@getReadPost', ['slug'=>$post->slug]) !!}">{{ $post->blog_title }}</a></td>
-                    <td>{{ $post->blog_content }}</td>
-                    <td>{{ $post->blog_created_by }}</td>
-                    <td>
-                        @foreach($post->categories as $category)
-                        {{ $category->category_name }},
-                        @endforeach
-                    </td>
-                    <td>{{ $post->blog_featured_image }}</td>
-                    <td class="selectable">
-                        <a class="btn btn-success btn-sm" href="{!! action('admin\BlogController@getEditPost', ['slug'=>$post->slug]) !!}">
-                            <span class="lnr lnr-pencil"></span> Edit
-                        </a>  
-                        <a class="btn btn-warning btn-sm" href="{!! action('admin\BlogController@postSoftDelete', ['slug'=>$post->slug]) !!}">
-                            <span class="lnr lnr-trash"></span> Trash
-                        </a> 
-                        <a class="btn btn-danger btn-sm" data-id="{{ $post->slug }}"  data-toggle="modal" data-target="#myModal">
-                            <span class="lnr lnr-cross"></span> Delete
-                        </a>
-                    </td>
-                </tr>        
-                @endforeach
-            </tbody>
         </table>
     </div>
 
@@ -104,5 +83,21 @@
 //    $(document).pjax('a', '#pjax-container')
 </script>
 
-
+<script>
+    $(function () {
+        $('#blog-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! action("admin\BlogController@allPost") !!}',
+            columns: [
+                {data: 'blog_title', name: 'blog_title'},
+                {data: 'blog_content', name: 'blog_content'},
+                {data: 'blog_created_by', name: 'blog_created_by'},
+                {data: 'categories', name: 'categories'},
+                {data: 'blog_featured_image', name: 'blog_featured_image'},
+                {data: 'action', name: 'action', orderable: false, searchable: false}
+            ]
+        });
+    });
+</script>
 @endpush

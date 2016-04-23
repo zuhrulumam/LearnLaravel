@@ -54,14 +54,20 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
     Route::get('admin/posts', 'admin\BlogController@index');
 
-    Route::get('admin/{slug?}/edit', 'admin\BlogController@getEditPost');
-    Route::post('admin/{slug?}/edit', 'admin\BlogController@postEditPost');
+    Route::get('admin/{slug}/edit', 'admin\BlogController@getEditPost');
+    Route::post('admin/{slug}/edit', 'admin\BlogController@postEditPost');
 
-    Route::post('admin/{slug?}/delete', 'admin\BlogController@postDelete');
+    Route::post('admin/{slug}/delete', 'admin\BlogController@postDelete');
 
-    Route::get('admin/{slug?}/read', 'admin\BlogController@getReadPost');
+    Route::get('admin/{slug}/read', 'admin\BlogController@getReadPost');
 
-    Route::post('admin/{slug?}/soft-delete-post', 'admin\BlogController@postSoftDelete');
+    Route::post('admin/{slug}/soft-delete-post', 'admin\BlogController@postSoftDelete');
+    
+    Route::get('admin/all-post/{trashed?}', 'admin\BlogController@allPost');
+    
+    Route::get('admin/get-trashed-post', 'admin\BlogController@getTrashed');
+    Route::post('admin/{slug}/trash-post', 'admin\BlogController@postTrashed');
+    Route::post('admin/{slug}/restore-post', 'admin\BlogController@postRestore');
 });
 
 // comments

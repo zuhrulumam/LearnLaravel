@@ -106,3 +106,7 @@ Day 25 :
 
 Day 26 : 
 - laravel/socialite Facebook Auth
+
+Day 27 :
+- datatable with relation in blog
+- softdelete with relation (min categories)

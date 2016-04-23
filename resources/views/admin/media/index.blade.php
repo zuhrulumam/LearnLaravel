@@ -23,8 +23,6 @@
     There is no media yet !! 
     @else
 
-
-
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
             <thead>

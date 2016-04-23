@@ -23,7 +23,9 @@ class CategoriesController extends Controller {
                             <span class="lnr lnr-cross"></span> Delete
                         </a>';
                         })
-//                        ->editColumn('id', 'ID: {{$id}}')
+                        ->editColumn('category_slug', function($category){
+                            return '<a href="'.  action('admin\CategoriesController@read', ['slug'=>$category->category_slug]).'">'.$category->category_slug.'</a>';
+                        })
                         ->make(true);
     }
 
