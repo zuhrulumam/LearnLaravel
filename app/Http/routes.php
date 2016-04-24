@@ -48,7 +48,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 });
 
 // crud blog post
-Route::group(['middleware' => ['web', 'auth']], function () {
+Route::group(['middleware' => ['web', 'auth', 'role:blog.writer']], function () {
     Route::get('admin/create-post', 'admin\BlogController@getCreate');
     Route::post('admin/create-post', 'admin\BlogController@postCreate');
 

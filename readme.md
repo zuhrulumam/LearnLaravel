@@ -109,4 +109,8 @@ Day 26 :
 
 Day 27 :
 - datatable with relation in blog
-- softdelete with relation (min categories)
+- softdelete with relation
+
+Day 28 :
+- implementing RBAC (Role Based Access Control) with package https://github.com/DynamicCodeNinja/RBAC
+- create admin and blog writer role 

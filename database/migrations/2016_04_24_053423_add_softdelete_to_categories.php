@@ -3,16 +3,15 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnDeleteAtComment extends Migration
-{
+class AddSoftdeleteToCategories extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('comments', function(Blueprint $table) {
+    public function up() {
+        Schema::table('categories', function(Blueprint $table) {
             $table->softDeletes();
         });
     }
@@ -22,8 +21,8 @@ class AddColumnDeleteAtComment extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         //
     }
+
 }

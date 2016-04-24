@@ -143,6 +143,8 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         
         Laravel\Socialite\SocialiteServiceProvider::class,
+        
+        DCN\RBAC\RBACServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
