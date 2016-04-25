@@ -21,6 +21,7 @@
         <script src="{!! asset('js/jquery.validate.min.js') !!}"></script>
 
         <script src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
+        
 
         <script src="{!! asset('js/jquery.pjax.js') !!}"></script>
 
@@ -30,7 +31,7 @@
 
     </head>
 
-    <body class="sticky-header left-side-collapsed"  onload="initMap()">   
+    <body class="sticky-header left-side-collapsed">   
         <section>
             @include('admin.layouts.navbar')
             <!-- main content start-->
@@ -46,7 +47,7 @@
 
         </section>
 
-        <script src="{!! asset('js/datatables/datatables.min.js') !!}"></script>
+       
 
         <script src="{!! asset('js/jquery.nicescroll.js') !!}"></script>
         <script src="{!! asset('js/scripts.js') !!}"></script>

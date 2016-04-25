@@ -114,3 +114,7 @@ Day 27 :
 Day 28 :
 - implementing RBAC (Role Based Access Control) with package https://github.com/DynamicCodeNinja/RBAC
 - create admin and blog writer role 
+
+Day 29 : 
+- add permission (part of RBAC)
+- drag drop image upload with CKEDITOR

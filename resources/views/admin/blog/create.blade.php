@@ -142,14 +142,17 @@
 
     });
 </script>
-
 <script>
 //   initSample();
 
     CKEDITOR.replace('content',
             {
                 customConfig: 'config.js',
-                toolbar: 'simple'
+                toolbar: 'simple',
+                filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+                filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+//                filebrowserUploadUrl : '/laravel-filemanager/upload',
+                filebrowserImageUploadUrl: '/laravel-filemanager/upload'               
             });
 
 </script>

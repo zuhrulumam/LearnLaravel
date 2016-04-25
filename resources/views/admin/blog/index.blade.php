@@ -82,7 +82,7 @@
 <script>
 //    $(document).pjax('a', '#pjax-container')
 </script>
-
+<script src="{!! asset('js/datatables/datatables.min.js') !!}"></script>
 <script>
     $(function () {
         $('#blog-table').DataTable({

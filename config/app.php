@@ -145,6 +145,10 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         
         DCN\RBAC\RBACServiceProvider::class,
+        
+        Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        
+        Collective\Html\HtmlServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -194,5 +198,8 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,        
         
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 ];

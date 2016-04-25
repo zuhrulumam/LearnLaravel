@@ -9,4 +9,5 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
         config.extraPlugins = 'clipboard';
         config.extraPlugins = 'imagepaste';
+        config.extraPlugins = 'uploadimage';
 };

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3987a767dbbbc88f8fa7e75dbc4e558",
-    "content-hash": "787585e299aaaaade85affe053ab9177",
+    "hash": "10872d899efd205129941f50c19a0bf8",
+    "content-hash": "6bf5c086736466d389f5fc3d6bd0defd",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2680,6 +2680,45 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2015-12-08 16:14:14"
+        },
+        {
+            "name": "tsawler/laravel-filemanager",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tsawler/laravel-filemanager.git",
+                "reference": "aa10c4c97caf00cc20e87c5867107fb9e8a7daf7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tsawler/laravel-filemanager/zipball/aa10c4c97caf00cc20e87c5867107fb9e8a7daf7",
+                "reference": "aa10c4c97caf00cc20e87c5867107fb9e8a7daf7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0.0",
+                "intervention/image": "2.*",
+                "laravelcollective/html": ">=5.1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tsawler\\Laravelfilemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Trevor Sawler",
+                    "email": "trevor.sawler@gmail.com"
+                }
+            ],
+            "description": "A file upload/editor intended for use with Laravel 5 and CKEditor",
+            "time": "2016-02-18 23:16:11"
         },
         {
             "name": "vlucas/phpdotenv",

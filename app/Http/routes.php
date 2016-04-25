@@ -47,8 +47,15 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     });
 });
 
+//Route::group(array('before' => 'auth'), function ()
+//{
+//    Route::get('/laravel-filemanager', 'Tsawler\Laravelfilemanager\controllers\LfmController@show');
+//    Route::post('/laravel-filemanager/upload', 'Tsawler\Laravelfilemanager\controllers\LfmController@upload');
+//    // list all lfm routes here...
+//});
+
 // crud blog post
-Route::group(['middleware' => ['web', 'auth', 'role:blog.writer']], function () {
+Route::group(['middleware' => ['web', 'auth', 'permission:edit.blog']], function () {
     Route::get('admin/create-post', 'admin\BlogController@getCreate');
     Route::post('admin/create-post', 'admin\BlogController@postCreate');
 
@@ -101,7 +108,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 // categories
-Route::group(['middleware' => ['web', 'auth']], function() {
+Route::group(['middleware' => ['web', 'auth', 'permission:edit.categories']], function() {
     Route::get("/admin/categories", "admin\CategoriesController@index");
 
     Route::get("admin/{slug}/read-category", "admin\CategoriesController@read");
