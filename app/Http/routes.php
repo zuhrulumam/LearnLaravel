@@ -47,12 +47,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     });
 });
 
-//Route::group(array('before' => 'auth'), function ()
-//{
-//    Route::get('/laravel-filemanager', 'Tsawler\Laravelfilemanager\controllers\LfmController@show');
-//    Route::post('/laravel-filemanager/upload', 'Tsawler\Laravelfilemanager\controllers\LfmController@upload');
-//    // list all lfm routes here...
-//});
 
 // crud blog post
 Route::group(['middleware' => ['web', 'auth', 'permission:edit.blog']], function () {
@@ -75,6 +69,8 @@ Route::group(['middleware' => ['web', 'auth', 'permission:edit.blog']], function
     Route::get('admin/get-trashed-post', 'admin\BlogController@getTrashed');
     Route::post('admin/{slug}/trash-post', 'admin\BlogController@postTrashed');
     Route::post('admin/{slug}/restore-post', 'admin\BlogController@postRestore');
+    
+    Route::any('/ckeditor/upload', 'admin\BlogController@ckUpload');
 });
 
 // comments

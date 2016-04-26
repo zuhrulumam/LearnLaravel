@@ -3,11 +3,11 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For example:
-	// config.language = 'fr';
-	// config.uiColor = '#AADC6E';
-        config.extraPlugins = 'clipboard';
-        config.extraPlugins = 'imagepaste';
-        config.extraPlugins = 'uploadimage';
+CKEDITOR.editorConfig = function (config) {
+    // Define changes to default configuration here. For example:
+    // config.language = 'fr';
+    // config.uiColor = '#AADC6E';
+    config.extraPlugins = 'clipboard';
+    config.extraPlugins = 'imagepaste';
+    config.extraPlugins = 'uploadimage';
 };

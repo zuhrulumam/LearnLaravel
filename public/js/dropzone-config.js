@@ -1,5 +1,4 @@
-//var photo_counter = 0;
-////myDropzone.options = {
+
 Dropzone.options.createForm = {
     uploadMultiple: false,
     parallelUploads: 100,
@@ -15,23 +14,7 @@ Dropzone.options.createForm = {
             alert("Added file.");
         });
         this.on("removedfile", function (file) {
-
-            $.ajax({
-                type: 'POST',
-                url: 'upload/delete',
-                data: {id: file.name},
-                dataType: 'html',
-                success: function (data) {
-                    var rep = JSON.parse(data);
-                    if (rep.code == 200)
-                    {
-                        photo_counter--;
-                        $("#photoCounter").text("(" + photo_counter + ")");
-                    }
-
-                }
-            });
-
+            alert("Removedfile.");
         });
     },
     error: function (file, response) {
@@ -49,10 +32,7 @@ Dropzone.options.createForm = {
         return _results;
     },
     success: function (file, done) {
-        console.log("berhasil hore");
+        console.log("Done !");
     }
 };
 
-$(document).ready(function(){
-    console.log("lalalal");
-});

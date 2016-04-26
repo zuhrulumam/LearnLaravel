@@ -151,8 +151,7 @@
                 toolbar: 'simple',
                 filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
                 filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-//                filebrowserUploadUrl : '/laravel-filemanager/upload',
-                filebrowserImageUploadUrl: '/laravel-filemanager/upload'               
+                uploadUrl : "{!! action('admin\BlogController@ckUpload', ['_token'=>csrf_token()]) !!}"
             });
 
 </script>

@@ -14,6 +14,7 @@ use Yajra\Datatables\Datatables;
 class BlogController extends Controller {
 
     protected $trashed;
+
     public function allPost($trashed = 0) {
         $this->trashed = $trashed;
         $posts = [];
@@ -22,7 +23,7 @@ class BlogController extends Controller {
         } else {
             $posts = Blog::all();
         }
-        
+
         return Datatables::of($posts)
                         ->addColumn('action', function ($post) {
                             $string = "";
@@ -36,13 +37,13 @@ class BlogController extends Controller {
                         </form>  ';
 
                             if ($this->trashed == 1) {
-                                $string = $restore.$delete;
+                                $string = $restore . $delete;
                             } else {
                                 $string = $edit . $delete . $trash;
                             }
 
                             return $string;
-                        })                      
+                        })
                         ->editColumn('blog_title', function($post) {
                             return '<a href="' . action("admin\BlogController@getReadPost", ["slug" => $post->slug]) . '">' . $post->blog_title . '</a>';
                         })
@@ -58,13 +59,14 @@ class BlogController extends Controller {
 
     public function postRestore($slug) {
 //        $post = Blog::whereSlug($slug)->first();
-        $post = Blog::withTrashed()->where(['slug'=>$slug])->first();
+        $post = Blog::withTrashed()->where(['slug' => $slug])->first();
 
         $post->restore();
 
         return redirect('admin/posts')->with('message', 'Success Restore post with slug ' . $slug);
         ;
     }
+
     public function postTrashed($slug) {
         $post = Blog::whereSlug($slug)->first();
 
@@ -94,6 +96,18 @@ class BlogController extends Controller {
         $categories = Categories::all();
 
         return view('admin.blog.create', ['categories' => $categories]);
+    }
+
+    public function ckUpload(Request $request) {
+        $filename = "";
+        if ($request->hasFile("upload")) {
+            $destinationPath = "images/upload";
+            $filename = $request->file("upload")->getClientOriginalName();
+
+            $request->file("upload")->move($destinationPath, $filename);
+            $url = asset($destinationPath) . '/' . $filename;
+            echo json_encode(["uploaded" => 1, "fileName" => $filename, "url" => $url]);
+        }
     }
 
     public function postCreate(BlogFormRequest $request) {
@@ -149,7 +163,7 @@ class BlogController extends Controller {
     }
 
     public function postDelete($slug) {
-       $post = Blog::withTrashed()->where(['slug'=>$slug])->first();
+        $post = Blog::withTrashed()->where(['slug' => $slug])->first();
 
         $post->forceDelete();
 
@@ -157,7 +171,7 @@ class BlogController extends Controller {
     }
 
     public function getReadPost($slug) {
-        $post = Blog::withTrashed()->where(['slug'=>$slug])->first();
+        $post = Blog::withTrashed()->where(['slug' => $slug])->first();
 
         return view('admin.blog.read', ['post' => $post]);
     }
